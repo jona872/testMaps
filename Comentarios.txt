@@ -1,0 +1,20 @@
+Cosas a ver->
+{-- ======================================= --}
+[Importante]
+Agregar BD Amigos...
+Implementar GuestList en eventos (?)
+Agregar foto a profile
+
+
+{-- ======================================= --}
+[Secundario]
+(.)Los eventos muestran created by (event_owner), poner el nombre en lugar del id
+()cambiar estructura base de datos(migrations)
+(.)Ver Mapas para eventos
+(.)Mapas andando x separado
+Terminar funcionalidad de mapas y eventos combinados
+(.)Borrar los comentarios
+Hacer un CONTACT Form
+Funcionalidad de created at y updated at <------
+
+{-- ======================================= --}
