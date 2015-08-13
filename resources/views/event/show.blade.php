@@ -30,7 +30,13 @@ abrirlo sin edicion lo cargo a pata a los campos
 </div>
 <div class="form-group" >
 	{!!Form::label('event_priv','event_priv: ')!!}
-	<div><em>{{$event->event_priv}}</em></div>
+	@if ($event->event_priv == 0)
+		<div><em>Evento Publico</em></div>
+	@else
+		<div><em>Evento Privdado</em></div>
+	@endif
+
+
 </div>
 
 </div>

@@ -13,11 +13,11 @@ class CreateGuestListTable extends Migration
     public function up()
     {
         Schema::create('guestList', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id_guestList');
             $table->integer('fk_user')->unsigned();
             $table->integer('fk_event')->unsigned();
-            $table->foreign('fk_user')->references('id')->on('users');
-            $table->foreign('fk_event')->references('id')->on('event');
+            $table->foreign('fk_user')->references('id_user')->on('users');
+            $table->foreign('fk_event')->references('id_event')->on('event');
             $table->rememberToken();
             $table->timestamps();
             //este admas tendria que tener un array de nombres(no de usuarios), xq puede

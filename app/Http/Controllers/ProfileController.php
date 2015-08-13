@@ -29,15 +29,10 @@ class ProfileController extends Controller
         // $profile = DB::select('SELECT * FROM `users` WHERE `id` = '.$id.' ;');
         // return view('profile.index',['profile'=>$profile]);
 
-        $id = Auth::user()->id;
-        $profile = User::where('id', $id)->get();
-        return view('profile.index',['profile'=>$profile]);
-    }
-    public function dameMasa()
-    {
-
-        $id = Auth::user()->id;
-        $profile = DB::select('SELECT * FROM `users` WHERE `id` = '.$id.' ;');
+// {-- LO MISMO PERO LARAVELEADO --}
+        
+        $id = Auth::user()->id_user;
+        $profile = User::where('id_user', $id)->get();
         return view('profile.index',['profile'=>$profile]);
     }
 

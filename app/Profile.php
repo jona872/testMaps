@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Profile extends Model
 {
 	protected $table = 'profile';
-    protected $primaryKey = 'id';
+    protected $primaryKey = 'id_profile';
     protected $fillable = ['name','fk','fk_user'];
     public $timestamps = false;
     protected $dateFormat = 'U';

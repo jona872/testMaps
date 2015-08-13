@@ -13,11 +13,14 @@ class HomeController extends Controller
     public function index()
     {
         //$home = Event::where('event_priv', 0)->get(); puedo agregar el created_at y esas weas 
-    $home = DB::select('SELECT `event`.`id`,`event`.`event_name`,`event`.`event_desc`,
-        `event`.`event_date`,`event`.`event_type`,`event`.`event_loca`,
-        `event`.`event_owner`, `event`.`event_priv`,`users`.`id`, `users`.`us_name` 
-        FROM `event`, `users` WHERE (`event`.`event_priv` =0 );');
- 
+    
+    $home = DB::select('SELECT * FROM users U, event E WHERE (E.event_priv = 0);');
+
+    //dd($events);
+    
+    if ($home==null)
+        return view('welcome');
+    else
     return view('home.index',['home'=>$home]);
        
     }

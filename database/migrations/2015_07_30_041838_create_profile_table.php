@@ -13,11 +13,11 @@ class CreateProfileTable extends Migration
     public function up()
     {
         Schema::create('profile', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id_profile');
             $table->integer('fk_user')->unsigned();
             $table->rememberToken();
             $table->timestamps();
-            $table->foreign('fk_user')->references('id')->on('users');
+            $table->foreign('fk_user')->references('id_user')->on('users');
         });
     }
 

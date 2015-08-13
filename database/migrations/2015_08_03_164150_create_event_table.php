@@ -13,7 +13,7 @@ class CreateEventTable extends Migration
     public function up()
     {
         Schema::create('event', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id_event');
             $table->integer('event_owner')->unsigned();
             $table->string('event_name')->unique();
             $table->string('event_desc');
@@ -25,7 +25,7 @@ class CreateEventTable extends Migration
             $table->boolean('event_priv');
             $table->rememberToken();
             $table->timestamps();
-            $table->foreign('event_owner')->references('id')->on('users');
+            $table->foreign('event_owner')->references('id_user')->on('users');
             //dejar esto 
         });
     }

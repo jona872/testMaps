@@ -26,11 +26,14 @@ Route::get('/vendor/add7', function () {
 Route::get('/vendor/add8', function () {
     return view('test');//mapa libre, pero con un idioma predefinido
 });
+Route::get('/vendor/add9', function () {
+    return view('coordInTitle');//mapa libre, pero con un idioma predefinido
+});
 
 
 //Proyecto
-Route::get('/pro', function () {
-    return view('profile.edit');
+Route::get('/test', function () {
+    return view('planear');
 });
 
 //entrada al sitio
@@ -46,4 +49,8 @@ Route::controllers([
 
 Route::resource('profile','ProfileController');//profile existe?//tienen otros campos como fotos etc..
 Route::resource('home','HomeController');//todos los eventos que saen "visibles" no privados
+
+
+
+Route::get('event/{id_event}/destroy','EventController@destroy');
 Route::resource('event','EventController');//todos los events de 1 usuario {{Auth::user()->id}}

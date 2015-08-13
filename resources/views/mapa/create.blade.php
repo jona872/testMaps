@@ -22,13 +22,16 @@
 function initialize() {
     var markers = [];
   var map = new google.maps.Map(document.getElementById('map-canvas'), {
+    zoom:11,
+    center: new google.maps.LatLng(-31.741317989222836, -60.51154777055223),//parana
     mapTypeId: google.maps.MapTypeId.ROADMAP
   });
 
+  //limites de arg. con   map.fitBounds(defaultBounds); al final de esto
   var defaultBounds = new google.maps.LatLngBounds(
-      new google.maps.LatLng(-33.8902, 151.1759),
-      new google.maps.LatLng(-33.8474, 151.2631));
-  map.fitBounds(defaultBounds);
+        new google.maps.LatLng(-22.715, -66.840),
+        new google.maps.LatLng(-48.048, -66.093));
+//map.fitBounds(defaultBounds);
 
   // Create the search box and link it to the UI element.
 
@@ -122,6 +125,30 @@ google.maps.event.addDomListener(window, 'load', initialize);
     			<label for="">Lng</label>
     			<input type="text" id="lng" name="lng" class="form-control input-sm">
     		</div>   
+        <div class="form-group" >
+  {!!Form::label('event_name','Name: ')!!}
+  {!!Form::text('event_name',null,['id'=> 'event_name', 'class'=> 'form-control', 'placeholder'=>'event_name aca'])!!}
+</div>
+<div class="form-group" >
+  {!!Form::label('event_desc','Description: ')!!}
+  {!!Form::text('event_desc',null,['id'=> 'event_desc', 'class'=> 'form-control', 'placeholder'=>'event_desc aca'])!!}
+</div>
+<div class="form-group" >
+  {!!Form::label('event_date','event_date: ')!!}
+  {!!Form::date('event_date',null,['id'=> 'event_date', 'class'=> 'form-control', 'placeholder'=>'cantidad aca'])!!}
+</div>
+<div class="form-group" >
+  {!!Form::label('event_type','type: ')!!}
+{!!Form::select('event_type', array('def' => 'Select Type','Party' => 'Party', 'Work' => 'Work', 'Friendly' => 'Friendly', 'Other' => 'Other'), 'def',array('class' => 'form-control'))!!}
+</div>
+<div class="form-group" >
+  {!!Form::label('event_loca','event_loca: ')!!}
+  {!!Form::text('event_loca',null,['id'=> 'event_loca', 'class'=> 'form-control', 'placeholder'=>'event_loca aca'])!!}
+</div>
+<div class="form-group" >
+  {!!Form::label('event_priv','event_priv: ')!!}
+  {!!Form::text('event_priv',null,['id'=> 'event_priv', 'class'=> 'form-control', 'placeholder'=>'event_priv aca'])!!}
+</div>
 		{!!Form::submit('SaveCon{Form}',['class'=>'btn btn-primary']) !!}
 		<button class="btn btn-sm btn-danger">Save</button> 
 	{!!Form::close()!!}

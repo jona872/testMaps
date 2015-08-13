@@ -13,11 +13,11 @@ class CreateToDoListTable extends Migration
     public function up()
     {
         Schema::create('toDoList', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id_toDoList');
             $table->integer('fk_task')->unsigned();
             $table->integer('fk_event')->unsigned();
-            $table->foreign('fk_task')->references('id')->on('task');
-            $table->foreign('fk_event')->references('id')->on('event');
+            $table->foreign('fk_task')->references('id_task')->on('task');
+            $table->foreign('fk_event')->references('id_event')->on('event');
             $table->rememberToken();
             $table->timestamps();
             //este admas tendria que tener un array de nombres(no de usuarios), xq puede

@@ -13,11 +13,11 @@ class CreateEventUserTable extends Migration
     public function up()
     {
         Schema::create('eventUser', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id_eventUser');
             $table->integer('fk_user')->unsigned();
             $table->integer('fk_event')->unsigned();
-            $table->foreign('fk_user')->references('id')->on('users');
-            $table->foreign('fk_event')->references('id')->on('event');
+            $table->foreign('fk_user')->references('id_user')->on('users');
+            $table->foreign('fk_event')->references('id_event')->on('event');
             $table->rememberToken();
             $table->timestamps();
         });
