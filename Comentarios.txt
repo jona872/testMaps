@@ -5,7 +5,7 @@ Agregar BD Amigos...
 Implementar GuestList en eventos (?)
 Agregar foto a profile
 Terminar de coordinar home no muestra eventos privados, pero si si son del auth::user
-
+Hacer que cargue asynscro el mapa en event create
 
 
 {-- ======================================= --}
@@ -19,5 +19,7 @@ Terminar funcionalidad de mapas y eventos combinados
 Hacer un CONTACT Form
 Funcionalidad de created at y updated at <------
 
+FECHAS ---> select ID_EMPLEADO, NOMBRE, APELLIDOS, date_format(F_NACIMIENTO,'%d-%m-%Y') F_NACIMIENTO
+  FROM EMPLEADOS
 
 {-- ======================================= --}

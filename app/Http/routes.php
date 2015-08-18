@@ -30,6 +30,10 @@ Route::get('/vendor/add9', function () {
     return view('coordInTitle');//mapa libre, pero con un idioma predefinido
 });
 
+Route::get('/mapTest', function () {
+    return view('ejer4');
+});
+
 
 //Proyecto
 Route::get('/test', function () {

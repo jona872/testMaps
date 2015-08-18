@@ -14,8 +14,12 @@ class HomeController extends Controller
     {
         //$home = Event::where('event_priv', 0)->get(); puedo agregar el created_at y esas weas 
     
-    $home = DB::select('SELECT * FROM users U, event E WHERE (E.event_priv = 0);');
-
+    //$home = DB::select('SELECT * FROM users U, event E WHERE (E.event_priv = 0);');
+    $home = DB::select('select 
+        E.id_event, E.event_owner,E.event_name,E.event_desc,E.event_type,E.event_priv,U.id_user,U.us_name
+        from users U, event E 
+        where (E.event_priv = 0) and (U.id_user = E.event_owner)');
+    //dd($home);
     //dd($events);
     
     if ($home==null)
